@@ -40,7 +40,7 @@ with open("laba_1.txt", "r") as file:
                 if (result_ten < 2048) and (result_ten % 2 == 0):
                     max_item = max(max_item, result_ten)
                     count_num += 1
-                    print(result + " - " + str(result_ten), end='; ')
+                    print(result, end='; ')
             except Exception:
                 continue
 
