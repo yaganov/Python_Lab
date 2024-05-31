@@ -35,12 +35,14 @@ with open("laba_1.txt", "r") as file:
             continue
         for index_item in range(max(1, k+1), BUFFER_len+1):
             result = item_file[0:index_item]
-            result_ten = int(result, 16)
-            if (result_ten < 2048) and (result_ten % 2 == 0):
-                max_item = max(max_item, result_ten)
-                count_num += 1
-                print(result, end='; ')
-
+            try:
+                result_ten = int(result, 16)
+                if (result_ten < 2048) and (result_ten % 2 == 0):
+                    max_item = max(max_item, result_ten)
+                    count_num += 1
+                    print(result, end='; ')
+            except Exception:
+                continue
 
         current_index += 1
         file.seek(current_index)                                 # переходим к следующему блоку
